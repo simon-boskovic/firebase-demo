@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+  <div class="add-button">
+    <ion-item>
+      <ion-button color="primary" (click)="inputFile.click()">
+        <ion-icon name="attach"></ion-icon> Upload image
+      </ion-button>
+      <input
+        #inputFile
+        id="input-file"
+        style="opacity: 0"
+        type="file"
+        (change)="fileUpload($event.target.files)"
+        multiple
+      />
+    </ion-item>
+  </div>
+  <div class="container">
+    <img class="image" src="https://picsum.photos/200/300" alt="" />
+    <img class="image" src="https://picsum.photos/200/300" alt="" />
+    <img class="image" src="https://picsum.photos/200/300" alt="" />
+    <img class="image" src="https://picsum.photos/200/300" alt="" />
+    <img class="image" src="https://picsum.photos/200/300" alt="" />
+  </div>
+</ion-content>

@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 29px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+}
+
+.add-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
