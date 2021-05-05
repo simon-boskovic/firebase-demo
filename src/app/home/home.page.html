@@ -1,7 +1,13 @@
 <ion-content [fullscreen]="true">
+  <ion-progress-bar type="indeterminate" *ngIf="isUploading"></ion-progress-bar>
+
   <div class="add-button">
     <ion-item>
-      <ion-button color="primary" (click)="inputFile.click()">
+      <ion-button
+        color="primary"
+        (click)="inputFile.click()"
+        [disabled]="isUploading"
+      >
         <ion-icon name="attach"></ion-icon> Upload image
       </ion-button>
       <input
@@ -14,11 +20,7 @@
       />
     </ion-item>
   </div>
-  <div class="container">
-    <img class="image" src="https://picsum.photos/200/300" alt="" />
-    <img class="image" src="https://picsum.photos/200/300" alt="" />
-    <img class="image" src="https://picsum.photos/200/300" alt="" />
-    <img class="image" src="https://picsum.photos/200/300" alt="" />
-    <img class="image" src="https://picsum.photos/200/300" alt="" />
+  <div class="container" *ngIf="imageUrls$ | async as imageUrls">
+    <img *ngFor="let image of imageUrls" class="image" [src]="image" alt="" />
   </div>
 </ion-content>
